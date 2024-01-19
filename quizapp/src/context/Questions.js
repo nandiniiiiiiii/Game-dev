@@ -7,7 +7,8 @@ export const Questions = [
             "1",
             "23",
             "3",
-        ]
+        ],
+        ans: "A"
     },
     {
         id: 2,
@@ -17,7 +18,8 @@ export const Questions = [
             "1",
             "23",
             "3",
-        ]
+        ],
+        ans: "B"
     },
     {
         id: 3,
@@ -27,6 +29,7 @@ export const Questions = [
             "1",
             "23",
             "3",
-        ]
+        ],
+        ans: "A"
     },
 ]

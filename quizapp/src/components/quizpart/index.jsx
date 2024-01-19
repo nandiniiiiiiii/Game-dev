@@ -20,15 +20,15 @@ function QuizPart() {
   }
 
   return (
-    <div className='quiz flex-none gap-2 bg-sky-300 '>
-      <h1>{currentQues+1}- {Questions[currentQues].que}</h1>
-      <div className='option'>
-        <button onClick={()=>{setChoice("A")}}>{Questions[currentQues].options[0]}</button>
-        <button onClick={()=>{setChoice("B")}}>{Questions[currentQues].options[1]}</button>
-        <button onClick={()=>{setChoice("C")}}>{Questions[currentQues].options[2]}</button>
-        <button onClick={()=>{setChoice("D")}}>{Questions[currentQues].options[3]}</button>
+    <div className='container flex-none gap-4 h-72 w-2/4 rounded-xl flex-col justify-center p-5 text-gray-950 font-mono'>
+      <h1 className=''>{currentQues+1}- {Questions[currentQues].que}</h1>
+      <div className='flex-none btncont gap-1'>
+        <button onClick={()=>{setChoice("A")}} className='border-2 border-black w-48 h-7'>{Questions[currentQues].options[0]}</button>
+        <button onClick={()=>{setChoice("B")}} className='border-2 border-black w-48 h-7'>{Questions[currentQues].options[1]}</button>
+        <button onClick={()=>{setChoice("C")}} className='border-2 border-black w-48 h-7'>{Questions[currentQues].options[2]}</button>
+        <button onClick={()=>{setChoice("D")}} className='border-2 border-black w-48 h-7'>{Questions[currentQues].options[3]}</button>
       </div>
-      <button onClick={nextquestion}>Next</button>
+      <button onClick={nextquestion} className='text-yellow-600 px-10 btn outline-2'>Next</button>
     </div>
   )
 }
