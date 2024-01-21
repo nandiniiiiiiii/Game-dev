@@ -4,6 +4,7 @@ import React, { useState, useContext } from "react";
 import QuizPart from './components/quizpart';
 import EndGame from './components/endgame';
 import { QuizContext } from './context/GameContext';
+import {CheckUserExist} from './helper/helper';
 
 function App() {
   const [gameState, setGameState] = useState("menu");
@@ -13,8 +14,10 @@ function App() {
     <div className='app'>
       <QuizContext.Provider value={{gameState,setGameState,score,setScore}}>
         {gameState === "menu" && <MainMenu />}
-        {gameState === "quizpart" && <QuizPart />}
-        {gameState === "endgame" && <EndGame />}
+        {gameState === "quizpart" && 
+          <QuizPart />}
+        {gameState === "endgame" && 
+          <EndGame />}
       </QuizContext.Provider>
     </div>
   );
