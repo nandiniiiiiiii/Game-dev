@@ -9,10 +9,12 @@ import {CheckUserExist} from './helper/helper';
 function App() {
   const [gameState, setGameState] = useState("menu");
   const [score,setScore] = useState(0);
+  const [name,setName] = useState("not defined");
+  const [question,setQuestion] = useState(0);
 
   return (
     <div className='app'>
-      <QuizContext.Provider value={{gameState,setGameState,score,setScore}}>
+      <QuizContext.Provider value={{gameState,setGameState,score,setScore,name,setName,question,setQuestion}}>
         {gameState === "menu" && <MainMenu />}
         {gameState === "quizpart" && 
           <QuizPart />}

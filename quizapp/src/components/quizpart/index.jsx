@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 function QuizPart() {
   const [currentQues,setCurrentQue]= useState(0);
   const [choice,setChoice] = useState("");  
-  const {gameState, setGameState,score,setScore} = useContext(QuizContext);
+  const {gameState, setGameState,score,setScore,question,setQuestion} = useContext(QuizContext);
 
   const nextquestion = () =>{
     if(currentQues == Questions.length-1){
@@ -14,6 +14,7 @@ function QuizPart() {
     }
     if(Questions[currentQues].ans == choice){
       setScore(score+2);
+      setQuestion(question+1);
       setCurrentQue(currentQues+1);
     }else{
       setCurrentQue(currentQues+1);

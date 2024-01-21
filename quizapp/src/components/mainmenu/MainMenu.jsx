@@ -1,9 +1,10 @@
-import { useState, React, useRef } from 'react';
+import { useState, React, useRef, useContext } from 'react';
 import Modal from "../Modal";
 import {useDispatch} from 'react-redux';
 // when ever there is export default we dont use {}
 import { motion, AnimatePresence } from "framer-motion";
 import { setUserId } from '../../redux/resultReducer';
+import { QuizContext } from '../../context/GameContext';
 
 function MainMenu() {
 
@@ -12,12 +13,14 @@ function MainMenu() {
     const close = () => setModalOpen(false);
     const inputref = useRef(null);
     const dispatch = useDispatch();
+    const { setName } = useContext(QuizContext)
 
     const handleClick = () =>{
         modalOpen ? close() : open()
         if(inputref.current?.value){
             dispatch(setUserId(inputref.current?.value))
         }
+        setName(inputref.current.value)
     }
 
     return (
